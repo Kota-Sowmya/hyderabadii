@@ -6,7 +6,6 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 20px;
       background-color: #f9f9f9;
     }
@@ -20,22 +19,45 @@
       padding: 10px;
       border: 1px solid #ccc;
       font-size: 14px;
+      margin-left: 20px;
     }
-    img {
-      max-width: 100%;
+    .image-placeholder {
+      width: 100%;
+      height: 150px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 10px;
     }
-    a {
+    .toggle-heading {
+      cursor: pointer;
       color: #0645ad;
-      text-decoration: none;
+      text-decoration: underline;
     }
-    a:hover {
+    .content {
+      display: none;
+      margin-left: 15px;
+    }
+    ul li a {
+      text-decoration: none;
+      color: #0645ad;
+    }
+    ul li a:hover {
       text-decoration: underline;
     }
     hr {
-      border: 0;
-      border-top: 1px solid #ccc;
+      margin-top: 40px;
     }
   </style>
+  <script>
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </head>
 <body>
 
@@ -43,33 +65,45 @@
 
   <div class="infobox">
     <h2>Hyderabad</h2>
-    <img src="hyud.jpg.jpg" alt="Charminar">
+    <div class="image-placeholder">Please enter the image</div>
     <p><strong>State:</strong> Telangana</p>
     <p><strong>Country:</strong> India</p>
     <p><strong>Known for:</strong> Heritage, Biryani, IT Hub</p>
   </div>
 
-  <p><strong>Hyderabad</strong> is a major tourist destination in India, known for its rich history, culture, architecture, and cuisine. It is the capital of the Indian state of Telangana. The city is a blend of modernity and tradition and is home to several iconic landmarks.</p>
+  <p><strong>Hyderabad</strong> is a major tourist destination in India, known for its rich history, culture, architecture, and cuisine. It is the capital of the Indian state of Telangana.</p>
 
   <h2>Famous Tourist Attractions</h2>
 
-  <h3>1. Charminar</h3>
-  <p>The <strong>Charminar</strong> is one of the most recognized structures in India. Built in 1591, it is located in the heart of the old city and is a symbol of Hyderabad.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('charminar')">1. Charminar</h3>
+  <div class="content" id="charminar">
+    <p>The <strong>Charminar</strong> is one of the most recognized structures in India. Built in 1591, it is located in the heart of the old city and is a symbol of Hyderabad.</p>
+  </div>
 
-  <h3>2. Golconda Fort</h3>
-  <p><strong>Golconda Fort</strong> is a historic fortress with grand architecture and amazing acoustic features. It was the capital of the medieval Golconda Sultanate.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('golconda')">2. Golconda Fort</h3>
+  <div class="content" id="golconda">
+    <p><strong>Golconda Fort</strong> is a historic fortress with grand architecture and amazing acoustic features. It was the capital of the medieval Golconda Sultanate.</p>
+  </div>
 
-  <h3>3. Ramoji Film City</h3>
-  <p>One of the largest film studio complexes in the world, <strong>Ramoji Film City</strong> is a major tourist attraction offering studio tours, film sets, and themed parks.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('ramoji')">3. Ramoji Film City</h3>
+  <div class="content" id="ramoji">
+    <p>One of the largest film studio complexes in the world, <strong>Ramoji Film City</strong> is a major tourist attraction offering studio tours, film sets, and themed parks.</p>
+  </div>
 
-  <h3>4. Hussain Sagar Lake</h3>
-  <p>The <strong>Hussain Sagar Lake</strong> is a heart-shaped lake built by Ibrahim Quli Qutb Shah. It features a large statue of Buddha in the center and offers boat rides.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('hussainsagar')">4. Hussain Sagar Lake</h3>
+  <div class="content" id="hussainsagar">
+    <p>The <strong>Hussain Sagar Lake</strong> is a heart-shaped lake built by Ibrahim Quli Qutb Shah. It features a large statue of Buddha in the center and offers boat rides.</p>
+  </div>
 
-  <h3>5. Salar Jung Museum</h3>
-  <p>The <strong>Salar Jung Museum</strong> has one of the largest collections of antiques and artifacts from all over the world, collected by a single person.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('salarjung')">5. Salar Jung Museum</h3>
+  <div class="content" id="salarjung">
+    <p>The <strong>Salar Jung Museum</strong> has one of the largest collections of antiques and artifacts from all over the world, collected by a single person.</p>
+  </div>
 
-  <h3>6. Birla Mandir</h3>
-  <p><strong>Birla Mandir</strong> is a beautiful Hindu temple built on a hilltop using white marble, offering panoramic views of the city.</p>
+  <h3 class="toggle-heading" onclick="toggleContent('birla')">6. Birla Mandir</h3>
+  <div class="content" id="birla">
+    <p><strong>Birla Mandir</strong> is a beautiful Hindu temple built on a hilltop using white marble, offering panoramic views of the city.</p>
+  </div>
 
   <h2>See Also</h2>
   <ul>
@@ -78,7 +112,7 @@
   </ul>
 
   <hr>
-  <p><em>PAGE IS DEVELOPED BY T	HE STUDENT OF Mr.PRASAD  </em></p>
+  <p><em>This is a basic Wikipedia-style page with collapsible content for educational purposes only.</em></p>
 
 </body>
 </html>
